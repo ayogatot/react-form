@@ -1,5 +1,49 @@
 import React, { Component } from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
+
+const Form = styled.form`
+  display: flex;
+  font-family: "Dosis", sans-serif;
+  justify-content: center;
+  background: #d84c73;
+  margin: 10px 10px 0 10px;
+  padding: 10px 10px 0 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius:20px 20px 0 0;
+
+  label {
+    margin: 40px;
+  }
+
+  input {
+    margin: 40px 0px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+  }
+
+  .submit {
+    margin-left: 20px;
+    width: 100px;
+    background: #5c3b6f;
+    color: #ffffff;
+    cursor: pointer;
+  }
+`;
+
+const Output = styled.ul`
+  background: #ff8484;
+  margin: -10px 10px 0 10px;
+  display:flex;
+  flex-direction:column;
+  border-radius: 0 0 20px 20px;
+
+  li {
+    padding:10px 0 10px 0;
+  }
+`;
 
 class TodoForm extends Component {
   constructor() {
@@ -45,16 +89,16 @@ class TodoForm extends Component {
     return (
       <div>
         <h1>Todo App</h1>
-        <form onSubmit={this.handleTodoSubmit}>
+        <Form onSubmit={this.handleTodoSubmit}>
           <input
             type="text"
             placeholder="Do Something"
             onChange={this.handleTodoInput}
             value={this.state.input}
           />
-          <input type="submit" value="Add" />
-        </form>
-        <ul>
+          <input className="submit" type="submit" value="Add" />
+        </Form>
+        <Output>
           {this.state.todos.map((todo, index) => {
             return (
               <li key={index}>
@@ -62,7 +106,7 @@ class TodoForm extends Component {
               </li>
             );
           })}
-        </ul>
+        </Output>
       </div>
     );
   }

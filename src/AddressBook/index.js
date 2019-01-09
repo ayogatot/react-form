@@ -1,6 +1,49 @@
 import React, { Component } from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
 
+const Form = styled.form`
+  display: flex;
+  font-family: "Dosis", sans-serif;
+  justify-content: center;
+  background: #d84c73;
+  margin: 10px 10px 0 10px;
+  padding: 10px 10px 0 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 20px 20px 0 0;
+
+  label {
+    margin: 40px;
+  }
+
+  input {
+    margin: 40px 0px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+  }
+
+  .submit {
+    margin-left: 20px;
+    width: 100px;
+    background: #5c3b6f;
+    color: #ffffff;
+    cursor: pointer;
+  }
+`;
+
+const Output = styled.ul`
+  background: #ff8484;
+  margin: -10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 20px 20px;
+
+  li {
+    padding: 10px 0 10px 0;
+  }
+`;
 class AddressBook extends Component {
   constructor() {
     super();
@@ -69,7 +112,7 @@ class AddressBook extends Component {
       <div>
         <h1>Address Book</h1>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <Form onSubmit={this.handleFormSubmit}>
           <label>Name</label>
           <input
             type="text"
@@ -91,10 +134,10 @@ class AddressBook extends Component {
             onChange={this.handleAddressChange}
             value={this.state.address}
           />
-          <input type="submit" value="Add" />
-        </form>
+          <input className="submit" type="submit" value="Add" />
+        </Form>
 
-        <ul>
+        <Output>
           {this.state.data.map((data, index) => {
             return (
               <li key={index}>
@@ -104,7 +147,7 @@ class AddressBook extends Component {
               </li>
             );
           })}
-        </ul>
+        </Output>
       </div>
     );
   }
