@@ -36,12 +36,13 @@ const Form = styled.form`
 const Output = styled.ul`
   background: #ff8484;
   margin: -10px 10px 0 10px;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   border-radius: 0 0 20px 20px;
 
   li {
-    padding:10px 0 10px 0;
+    color: #ffffff;
+    padding: 10px 0 10px 0;
   }
 `;
 
@@ -102,7 +103,7 @@ class TodoForm extends Component {
           {this.state.todos.map((todo, index) => {
             return (
               <li key={index}>
-                {todo.id} : {todo.text}
+                {todo.text}
               </li>
             );
           })}
