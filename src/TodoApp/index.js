@@ -11,7 +11,7 @@ const Form = styled.form`
   color: #ffffff;
   font-weight: 600;
   font-size: 20px;
-  border-radius:20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
 
   label {
     margin: 40px;
@@ -88,7 +88,24 @@ class TodoForm extends Component {
     this.setState({
       input: "",
       todos: newTodos
-    })
+    });
+  };
+
+  // handleTodoRemove = indexRemove => {
+  //   this.setState({todos: this.state.todos.filter(event => {
+  //       return event !== indexRemove.target.value ;
+  //     })
+  //   });
+  // };
+
+  handleTodoRemove = indexToRemove => {
+    const newTodos = this.state.todos.filter((todo, index) => {
+      return index !== indexToRemove;
+    });
+
+    this.setState({
+      todos: newTodos
+    });
   };
 
   render() {
@@ -109,6 +126,11 @@ class TodoForm extends Component {
             return (
               <li key={index}>
                 {todo.text}
+                <input
+                  type="button"
+                  value="remove"
+                  onClick={() => this.handleTodoRemove(todo.id)}
+                />
               </li>
             );
           })}
