@@ -46,6 +46,11 @@ const Output = styled.ul`
   }
 `;
 
+const Title = styled.h1`
+  padding-left: 20px;
+  font-family: "Dosis", sans-serif;
+`;
+
 class TodoForm extends Component {
   constructor() {
     super();
@@ -89,7 +94,7 @@ class TodoForm extends Component {
   render() {
     return (
       <div>
-        <h1>Todo App</h1>
+        <Title>Todo App</Title>
         <Form onSubmit={this.handleTodoSubmit}>
           <input
             type="text"

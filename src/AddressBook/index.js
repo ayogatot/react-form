@@ -45,6 +45,11 @@ const Output = styled.ul`
     padding: 10px 0 10px 0;
   }
 `;
+
+const Title = styled.h1`
+  padding-left: 20px;
+  font-family: "Dosis", sans-serif;
+`;
 class AddressBook extends Component {
   constructor() {
     super();
@@ -111,7 +116,7 @@ class AddressBook extends Component {
   render() {
     return (
       <div>
-        <h1>Address Book</h1>
+        <Title>Address Book</Title>
 
         <Form onSubmit={this.handleFormSubmit}>
           <label>Name</label>

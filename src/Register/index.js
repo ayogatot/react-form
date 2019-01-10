@@ -33,6 +33,11 @@ const Form = styled.form`
   }
 `;
 
+const Title = styled.h1`
+  padding-left: 20px;
+  font-family: "Dosis", sans-serif;
+`;
+
 class Register extends Component {
   constructor() {
     super();
@@ -54,7 +59,7 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <h1>Register Form</h1>
+        <Title>Register Form</Title>
         <Form>
           <label htmlFor="">Email</label>
           <input
