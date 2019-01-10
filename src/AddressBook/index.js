@@ -41,6 +41,7 @@ const Output = styled.ul`
   border-radius: 0 0 20px 20px;
 
   li {
+    color:#ffffff;
     padding: 10px 0 10px 0;
   }
 `;
